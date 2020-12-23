@@ -14,7 +14,7 @@ $query = "SELECT count(*) as total FROM Comps WHERE expires > current_timestamp 
 paginate($query, $scoreCount);
 
 
-$stmt = $db->prepare("SELECT * FROM Competitions WHERE expires > current_timestamp ORDER BY expires ASC LIMIT :offset,:count");
+$stmt = $db->prepare("SELECT * FROM Comps WHERE expires > current_timestamp ORDER BY expires ASC LIMIT :offset,:count");
 $stmt->bindValue(":offset", $offset, PDO::PARAM_INT);
 $stmt->bindValue(":count", $per_page, PDO::PARAM_INT);
 $stmt->execute();
