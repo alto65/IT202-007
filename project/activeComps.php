@@ -11,7 +11,7 @@ $db = getDB();
 
 $scoreCount = 10;
 $query = "SELECT count(*) as total FROM Comps WHERE expires > current_timestamp ORDER BY expires ASC";
-paginate($query, $scoreCount);
+pagiMaker($query, $scoreCount);
 
 
 $stmt = $db->prepare("SELECT * FROM Comps WHERE expires > current_timestamp ORDER BY expires ASC LIMIT :offset,:count");
